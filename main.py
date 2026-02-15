@@ -17,9 +17,6 @@ from config import (
     API_HASH,
     BOT_TOKEN,
     ADMIN_IDS,
-    MERCHANT_KEY,
-    LOG_CHANNEL_ID,
-    DEPOSIT_LOG_ID
 )
 
 app = Client(
@@ -139,7 +136,7 @@ def set_country_price(country, price):
 async def start_h(c, m):
     get_user_data(m.from_user.id)
     kb = types.ReplyKeyboardMarkup([["🛒 Buy Account", "👤 Profile"], ["💰 Deposit", "📊 My Stats"], ["☎️ Support"]], resize_keyboard=True)
-    await m.reply("**👋 Welcome To TG-Kiиg Robot!\n\nThe Most Trusted Place For Telegram Accounts.**", reply_markup=kb)
+    await m.reply("**👋 Welcome To TIJI_AXX_BOT!\n\nThe Most Trusted Place For Telegram Accounts.\n\n ᴊᴏɪɴ ᴏᴜʀ ᴄʜᴀɴɴᴇʟs\n\n@sxyaru\n@lll_YOUR_PANDA**", reply_markup=kb)
 
 # --- SUPPORT HANDLER ---
 @bot.on_message(filters.regex("☎️ Support") & filters.private)
@@ -170,8 +167,8 @@ async def deposit_init(c, m):
             pass
 
     upi_id = "nikhil-bby@fam"
-    pn = "TGKingRobot"
-    tn = "Deposit in TGKingRobot"
+    pn = "TIJI_AXX_BOT"
+    tn = "Deposit in TIJI_AXX_BOT"
 
     upi_link = f"upi://pay?pa={upi_id}&pn={pn}&tn={urllib.parse.quote(tn)}&am=0&cu=INR"
     qr_image = f"https://api.qrserver.com/v1/create-qr-code/?size=350x350&margin=20&data={urllib.parse.quote(upi_link)}"
@@ -276,7 +273,7 @@ async def handle_screenshot(c, m):
     )
 
     # Forward the photo first
-    forwarded_msg = await m.forward(ADMIN_ID)
+    forwarded_msg = await m.forward(ADMIN_IDS)
 
     # Then send the caption as a reply to the forwarded message
     await bot.send_message(
