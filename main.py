@@ -12,13 +12,22 @@ from pyrogram.raw import functions, types as raw_types
 from pyrogram.errors import RPCError, UserIsBlocked, FloodWait
 
 # --- CONFIGURATION ---
-API_ID = 20898349
-API_HASH = "9fdb830d1e435b785f536247f49e7d87"
-BOT_TOKEN = "8281283287:AAE1Msn2RZKYd1pLS0ZJTyg1wRrfBzObCdg"
-ADMIN_IDS = [7450385463, 7563727739, 7875411241]
-MERCHANT_KEY = "SDJ6hB8zbfDd6K" # Updated as per your BJS code
-LOG_CHANNEL_ID = -1002635720348
-DEPOSIT_LOG_ID = -1003798769331 # Admin Log Channel ID
+from config import (
+    API_ID,
+    API_HASH,
+    BOT_TOKEN,
+    ADMIN_IDS,
+    MERCHANT_KEY,
+    LOG_CHANNEL_ID,
+    DEPOSIT_LOG_ID
+)
+
+app = Client(
+    "my_bot",
+    api_id=API_ID,
+    api_hash=API_HASH,
+    bot_token=BOT_TOKEN
+)
 SPAM_APPROVAL = {}
 
 bot = Client("TG_AXX_BOT", api_id=API_ID, api_hash=API_HASH, bot_token=BOT_TOKEN)
