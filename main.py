@@ -897,7 +897,7 @@ async def handle_inputs(c, m):
         return
 
     # 4. ADMIN ADD ACCOUNT FLOW (EXISTING - UNTOUCHED)
-    elif uid == ADMIN_ID:
+    elif uid == ADMIN_IDS:
         if state.get("step") == "country":
             state.update({"country": m.text, "step": "phone"})
             await m.reply("**✅ Send Phone Number (+91...):**")
